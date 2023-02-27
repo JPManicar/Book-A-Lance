@@ -1,11 +1,16 @@
-import { StyleSheet, Text,Image, TouchableOpacity, SafeAreaView} from 'react-native';
+import { StyleSheet, Text,Image, TouchableOpacity, SafeAreaView , ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 const MAX_COLUMNS = 3;
 
+const image = {uri: 'https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.15752-9/334030700_1388950791895334_6806776241274506609_n.png?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGVKp64dkDTdXFTybfRuPpIhfh1depObIWF-HV16k5shdr28C8N0hTWkrO6AxhbcZunZuxlGMSjhKgbnCo8VRMF&_nc_ohc=EZq85CqVWPcAX8iBEPJ&_nc_ht=scontent.fmnl4-6.fna&oh=03_AdSZsGc3Dvd1nPa_RWIPkgKKZZgN_d0gKjd2M5_Tj-zGFw&oe=6423B10F'};
+
 const userHomeScreen = ({navigation}) => {
   return (
+
+    
       <SafeAreaView style = {styles.container}>
+        <ImageBackground source={image} style={styles.container}>
         <SafeAreaView style = {styles.navBar}>
           <Image 
             source= {{
@@ -58,9 +63,9 @@ const userHomeScreen = ({navigation}) => {
           </TouchableOpacity>
 
         </SafeAreaView>
-      
+        </ImageBackground>
       </SafeAreaView>
-      
+    
       
             
   );
@@ -77,10 +82,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:'column',
     
-    backgroundColor: '#ffff',
     justifyContent: 'center',
     alignItems: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
+
+    
+  },
+
+  bgImage:{
+    flex:1,
+    resizeMode: 'cover',
   },
 
   navBar:{
@@ -135,7 +146,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
 
     height:'50%',
-    backgroundColor:'#FF8D8D',
 
     justifyContent: 'center',
     alignItems: 'center',
