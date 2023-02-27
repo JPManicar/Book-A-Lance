@@ -25,10 +25,12 @@ Dependencies used :
     "react-native-web": "~0.18.9"
    
 To run, use :
-
-"npm start" 
-or 
-"npx expo start"
+    
+ ```npm start```  
+    
+  or
+    
+ ```npx expo start```
     
     
   
