@@ -8,6 +8,7 @@ To run the code simply install the latest version of react-native and node js.
 
 Make sure to install the following packages/dependencies.
 Dependencies used :
+
     "@expo/webpack-config": "^0.17.2",
     
     "@react-native-community/masked-view": "^0.1.11",
