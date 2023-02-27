@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Text } from 'react-native';
+
+import userHomeScreen from './src/screens/userHomeScreen';
+import callAmbulance from './src/screens/callAmbulance';
+import confirmCall from './src/screens/confirmCall';
+import trackAmbulance from './src/screens/trackAmbulance';
+import emergencyContacts from './src/screens/emergencyContacts';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+
+        <Stack.Screen name="HomeScreen" component={userHomeScreen} />
+        <Stack.Screen name="CallAmbulanceScreen" component={callAmbulance} />
+        <Stack.Screen name="ConfirmCallScreen" component={confirmCall} />
+        <Stack.Screen name="trackAmbulanceScreen" component={trackAmbulance} />
+        <Stack.Screen name="emergencyContactsScreen" component={emergencyContacts} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
